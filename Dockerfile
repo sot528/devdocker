@@ -1,8 +1,14 @@
 FROM ubuntu:latest
 
+RUN apt-get install -y software-properties-common
+RUN add-apt-repository -y ppa:ethereum/ethereum
 RUN apt-get update
-RUN apt-get install -y vim git gcc zip wget nodejs npm
+RUN apt-get install -y vim git gcc zip wget \
+  nodejs npm \
+  golang \
+  ethereum
 
+# python
 RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
 
