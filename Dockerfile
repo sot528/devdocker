@@ -2,16 +2,15 @@ FROM ubuntu:latest
 
 RUN apt-get update --fix-missing
 RUN apt-get install -y software-properties-common
-RUN add-apt-repository -y ppa:ethereum/ethereum
 RUN apt-get update
 RUN apt-get install -y vim git gcc zip wget curl \
   nodejs npm \
-  golang \
-  ethereum
+  golang
 
 # python
 RUN wget https://bootstrap.pypa.io/get-pip.py
-RUN python get-pip.py
+RUN apt-get install -y python3-pip
+RUN python3 get-pip.py
 
 # Rust
 ENV RUST_VERSION stable
