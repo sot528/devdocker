@@ -20,3 +20,5 @@ ENV PATH $PATH:/root/.cargo/bin
 # work dir
 RUN mkdir /root/work
 WORKDIR /root/work
+
+RUN ln -fs /usr/bin/python3 /usr/bin/python
